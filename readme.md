@@ -1,5 +1,5 @@
 This is a simple set of instructions on how you can create your docker environment for your local development:
-1. First remove the git link from your root directory (go to your git bash and type rm -rf .git)
+1. First remove the git link from your root directory (go to your git bash and inside your docker environment direcotry and type rm -rf .git)
 2. Clone your service inside the root directory and create a Dockerfile then paste the following contents:
 
 FROM php:7.2-fpm
