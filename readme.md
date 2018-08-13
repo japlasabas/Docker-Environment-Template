@@ -1,6 +1,6 @@
 This is a simple set of instructions on how you can create your docker environment for your local development:
 1. First remove the git link from your root directory (go to your git bash and inside your docker environment direcotry and type rm -rf .git)
-2. Clone your service from a repository inside the root directory and create a Dockerfile then copy the contents of the Dockerfile inside the "service-folder" folder.
+2. Clone your service from a repository inside the root directory and create a Dockerfile then copy the contents of the Dockerfile inside the "service-folder" folder and replace the marked placeholder values with your service name.
 3. Remember that the folder directory of your cloned repository shall be your service name defined inside the docker-compose.yml
 4. Create a vhost for your newly cloned service by creating a new vhost.conf file (name should be prefixed with the service folder name e.g. f3-api-vhost.conf) and save it in ".nginx" folder directory
 5. Copy the contents from "service-template-vhost.conf" to your newly created vhost config file and replace all the values of the marked placeholder (all {{SERVICE_NAME}} variables) with the appropriate service name
