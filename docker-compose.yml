@@ -1,0 +1,27 @@
+version: '3'
+services:
+    web:
+        build:
+            context: ./
+            dockerfile: .nginx/Dockerfile
+        ports:
+            - 8081:81
+        links:
+            - {{SERVICE_NAME}}
+    {{SERVICE_NAME}}:
+        build:
+            context: ./
+            dockerfile: {{SERVICE_NAME}}/Dockerfile
+        volumes:
+            - ./{{SERVICE_NAME}}:/var/www/html/{{SERVICE_NAME}}
+        environment:
+            DB_CONNECTION: pgsql
+            DB_HOST: 172.17.0.1
+            DB_PORT: 5432
+            DB_DATABASE: f3_local
+            DB_USERNAME: postgres
+            DB_PASSWORD: postgres
+            DB_CHARSET: utf8
+            REDIS_HOST: 172.17.0.1
+            REDIS_PORT: 6379
+            REDIS_PASSWORD: null
